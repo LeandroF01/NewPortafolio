@@ -35,15 +35,30 @@
     -0.9px 3.2px 4.1px -0.9px hsl(var(--shadow-color) / 0.11),
     -1.8px 6.1px 7.8px -1.3px hsl(var(--shadow-color) / 0.11),
     -3.3px 11.3px 14.5px -1.8px hsl(var(--shadow-color) / 0.11);
+
+  --black-gt: linear-gradient(
+    16deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(41, 41, 70, 1) 49%
+  );
+
+  --buttom-cl: linear-gradient(
+    90deg,
+    #00c0ff 0%,
+    #ffcf00 49%,
+    #fc4f4f 80%,
+    #00c0ff 100%
+  );
 }
 
 .body__dark--mode {
-  --gt-yellow: rgb(49, 49, 49);
-  --cl-yellow-nav: rgb(49, 49, 49);
-  --cl-yellow_2: rgb(49, 49, 49);
-  --cl-white-bg: rgb(65, 65, 65);
+  --gt-yellow: var(--black-gt);
+  --cl-yellow-nav: rgba(41, 41, 70, 1);
+  --cl-yellow_2: rgba(41, 41, 70, 1);
+  --cl-black: rgb(250, 249, 249);
+  --cl-white-bg: rgba(2, 0, 36, 1);
   --cl-black-text: rgb(250, 249, 249);
-  --cl-white: rgb(82, 82, 82);
+  --cl-white: rgb(49, 49, 86);
   --shadow-color: 0deg 0% 14%;
   --shadow-elevation-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
     0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
@@ -130,13 +145,45 @@ a {
   cursor: pointer;
   color: var(--cl-black-text);
 }
+.button__download {
+  display: flex;
+  justify-content: center;
+}
+.rainbow-button {
+  color: var(--cl-black-text);
+  width: 8em;
+  height: 3em;
+  background-image: var(--buttom-cl);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rainbow-button:after {
+  content: "Download CV";
+  font-size: 0.8em;
+  font-weight: 600;
+  width: 9em;
+  height: 3em;
+  background: var(--gt-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rainbow-button:hover {
+  animation: slidebg 2s linear infinite;
+}
+
+@keyframes slidebg {
+  to {
+    background-position: 20vw;
+  }
+}
 
 /*<-- Title prince and text -->*/
 
-.container-name {
-  padding: 100px 0;
-}
 .me_name {
+  margin-bottom: 0.2em;
   display: grid;
   text-align: center;
   font-size: 6rem;
@@ -170,6 +217,24 @@ a {
     border-color: transparent;
   }
 }
+
+.photo-image {
+  display: block;
+  margin: 0 auto;
+  padding-top: 3.2em;
+  width: 15em;
+  animation: 2s move infinite alternate;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(-2%);
+  }
+  100% {
+    transform: translateY(10%);
+  }
+}
+
 /* Red social */
 .section-ul {
   display: flex;
@@ -600,6 +665,11 @@ a {
     opacity: 1;
   }
 }
+
+.footer__text {
+  color: var(--cl-black);
+}
+
 /*<-- Media  -->*/
 
 @media (max-width: 1000px) {
