@@ -183,7 +183,7 @@ a {
 /*<-- Title prince and text -->*/
 
 .me_name {
-  margin-bottom: 0.2em;
+  margin-bottom: 0.1em;
   display: grid;
   text-align: center;
   font-size: 6rem;
@@ -196,7 +196,7 @@ a {
 }
 
 .text-description {
-  margin: auto;
+  margin: 0.1em auto;
   white-space: nowrap;
   border-right: 4px solid;
   font-size: 1rem;
@@ -433,7 +433,10 @@ a {
 }
 
 /*<-- Briefcase Carads -->*/
-
+.container__article {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
 .title-briefcase {
   font-size: 3rem;
   margin: auto;
@@ -444,7 +447,7 @@ a {
   margin: 1em;
   margin-bottom: 3em;
   width: 250px;
-  height: 400px;
+  height: 380px;
   padding: 10px;
   border-radius: 0.2em;
   box-shadow: var(--shadow-elevation-medium);
